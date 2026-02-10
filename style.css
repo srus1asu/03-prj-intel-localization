@@ -1,0 +1,353 @@
+/* ==========================================
+   GLOBAL STYLES
+   ========================================== */
+
+/* Reset default margins and padding for consistency */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set base font and background for the entire page */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  overflow-x: hidden; /* Prevent horizontal scrolling on body */
+}
+
+/* ==========================================
+   HERO SECTION (HEADER)
+   ========================================== */
+
+/* Style the header with Intel's blue brand color */
+header {
+  background: linear-gradient(135deg, #0071c5 0%, #0054a6 100%); /* Intel blue gradient */
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Add a subtle pattern overlay effect */
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg"><rect width="60" height="60" fill="none"/><circle cx="30" cy="30" r="1" fill="white" opacity="0.1"/></svg>');
+  pointer-events: none;
+}
+
+/* Center the content inside the header */
+header > div {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1; /* Keep content above the pattern overlay */
+}
+
+/* Size and style the Intel logo */
+header img {
+  width: 120px;
+  height: auto;
+  margin-bottom: 20px;
+  filter: brightness(0) invert(1); /* Make logo white */
+}
+
+/* Main heading style */
+header h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Add depth */
+}
+
+/* Subheading/description style */
+header p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+  opacity: 0.95;
+}
+
+/* ==========================================
+   TIMELINE SECTION
+   ========================================== */
+
+/* Container for timeline cards */
+section {
+  display: flex;
+  gap: 30px; /* Space between cards */
+  padding: 50px 20px;
+  overflow-x: auto; /* Allow horizontal scrolling */
+  scroll-behavior: smooth; /* Smooth scrolling */
+  /* EXTRA CREDIT: Scroll snap for smooth navigation */
+  scroll-snap-type: x mandatory;
+}
+
+/* Hide scrollbar but keep functionality (optional for cleaner look) */
+section::-webkit-scrollbar {
+  height: 8px;
+}
+
+section::-webkit-scrollbar-track {
+  background: #e0e0e0;
+}
+
+section::-webkit-scrollbar-thumb {
+  background: #0071c5;
+  border-radius: 4px;
+}
+
+/* ==========================================
+   TIMELINE CARD STYLES
+   ========================================== */
+
+/* Individual milestone card */
+section > div {
+  min-width: 300px; /* Minimum width for horizontal scrolling */
+  max-width: 300px;
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  position: relative;
+  overflow: hidden;
+  /* EXTRA CREDIT: Scroll snap alignment */
+  scroll-snap-align: center;
+}
+
+/* EXTRA CREDIT: Hover effect with transform and shadow */
+section > div:hover {
+  transform: translateY(-10px) scale(1.03); /* Lift and slightly enlarge */
+  box-shadow: 0 12px 24px rgba(0, 113, 197, 0.3); /* Intel blue shadow */
+  cursor: pointer;
+}
+
+/* Add a colored accent bar at the top of each card */
+section > div::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #0071c5, #00c7fd);
+}
+
+/* Year heading (h2) */
+section > div h2 {
+  color: #0071c5; /* Intel blue */
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Milestone title (h3) */
+section > div h3 {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+/* Milestone image */
+section > div img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+  display: block; /* Ensure images are always displayed */
+}
+
+/* EXTRA CREDIT: Image zoom on card hover */
+section > div:hover img {
+  transform: scale(1.08);
+}
+
+/* Milestone description */
+section > div p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #555;
+  max-height: 0; /* Hidden by default */
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+/* Show description on hover */
+section > div:hover p {
+  max-height: 200px; /* Reveal text */
+  opacity: 1;
+  margin-top: 10px;
+}
+
+/* ==========================================
+   FOOTER INSTRUCTION TEXT
+   ========================================== */
+
+/* Style the instruction text at the bottom */
+body > p {
+  text-align: center;
+  padding: 20px;
+  font-size: 1rem;
+  color: #666;
+  background: white;
+  border-top: 2px solid #e0e0e0;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+   ========================================== */
+
+/* Tablet Landscape (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Adjust header for tablets */
+  header {
+    padding: 50px 20px;
+  }
+
+  header h1 {
+    font-size: 2.2rem;
+  }
+
+  header p {
+    font-size: 1.1rem;
+  }
+
+  /* Smaller cards for tablet screens */
+  section > div {
+    min-width: 280px;
+    max-width: 280px;
+  }
+
+  section > div img {
+    height: 160px;
+  }
+}
+
+/* Tablet Portrait & Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  /* Stack timeline cards vertically */
+  section {
+    flex-direction: column;
+    overflow-x: visible; /* No horizontal scroll on mobile */
+    align-items: center;
+    scroll-snap-type: none; /* Disable scroll snap on mobile */
+    padding: 30px 15px;
+  }
+
+  /* Adjust card width for mobile */
+  section > div {
+    min-width: 100%;
+    max-width: 500px;
+    margin-bottom: 20px; /* Add space between stacked cards */
+  }
+
+  /* Always show description on mobile (no hover needed) */
+  section > div p {
+    max-height: none;
+    opacity: 1;
+    margin-top: 10px;
+  }
+
+  /* Remove hover effects on mobile */
+  section > div:hover {
+    transform: none;
+  }
+
+  /* Adjust header text sizes for smaller screens */
+  header {
+    padding: 40px 15px;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  header p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  header img {
+    width: 90px;
+  }
+
+  /* Adjust card text sizes */
+  section > div h2 {
+    font-size: 1.5rem;
+  }
+
+  section > div h3 {
+    font-size: 1.1rem;
+  }
+
+  section > div p {
+    font-size: 0.9rem;
+  }
+
+  /* Adjust footer */
+  body > p {
+    font-size: 0.85rem;
+    padding: 15px;
+  }
+}
+
+/* Small Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  header p {
+    font-size: 0.9rem;
+  }
+
+  header img {
+    width: 70px;
+  }
+
+  section {
+    padding: 20px 10px;
+  }
+
+  section > div {
+    padding: 20px;
+  }
+
+  section > div h2 {
+    font-size: 1.3rem;
+  }
+
+  section > div h3 {
+    font-size: 1rem;
+  }
+
+  section > div img {
+    height: 150px;
+  }
+}
+
+/* Large Screens (min-width: 1400px) */
+@media (min-width: 1400px) {
+  /* Larger cards for big screens */
+  section > div {
+    min-width: 350px;
+    max-width: 350px;
+  }
+
+  section > div img {
+    height: 200px;
+  }
+}
