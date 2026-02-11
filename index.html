@@ -1,18 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- Add dir="rtl" to enable RTL mode. Remove it or change to dir="ltr" for left-to-right -->
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore Intel's sustainability journey through time, from founding in 1968 to achieving net-zero emissions by 2040." />
   <title>Intel: Sustainability Through the Ages</title>
+  
+  <!-- Bootstrap 5 CSS for responsive design and RTL support -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Bootstrap Icons for visual enhancements -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  
+  <!-- Custom styles -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
+  <!-- Skip Navigation Link for Accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Language Switcher (Demo) -->
+  <div class="language-switcher">
+    <label for="languageSelect" class="language-label">
+      <i class="bi bi-translate" aria-hidden="true"></i> Language:
+    </label>
+    <select id="languageSelect" class="form-select form-select-sm" aria-label="Select language">
+      <option value="en" selected>English (LTR)</option>
+      <option value="ar">العربية (Arabic - RTL)</option>
+      <option value="he">עברית (Hebrew - RTL)</option>
+      <option value="fa">فارسی (Persian - RTL)</option>
+      <option value="ur">اردو (Urdu - RTL)</option>
+      <option value="es">Español (Spanish - LTR)</option>
+      <option value="fr">Français (French - LTR)</option>
+      <option value="de">Deutsch (German - LTR)</option>
+    </select>
+  </div>
+
   <!-- Header / Hero Section -->
-  <header class="hero">
+  <header class="hero" role="banner">
     <div class="hero-content">
       <!-- Ask Copilot to teach you about `.svg`. 🙂 You'll need to resize the logo with CSS. -->
-      <img src="img/intel-header-logo.svg" alt="Intel Logo" class="hero-logo" />
+      <img src="img/intel-header-logo.svg" alt="Intel Corporation Logo" class="hero-logo" />
       <!-- Main Heading -->
       <h1>
         Sustainability Through the Ages
@@ -28,13 +58,14 @@
   </header>
 
   <!-- Timeline Cards Section -->
-  <section class="timeline">
+  <main id="main-content">
+  <section class="timeline" aria-label="Intel Sustainability Timeline">
 
     <!-- Card 1: 1968 -->
     <div class="timeline-card">
       <h2>1968</h2>
       <h3>Intel Founded</h3>
-      <img src="img/1.jpg" alt="Intel Founded in 1968" class="card-img" />
+      <img src="img/1.jpg" alt="Historical photo showing the founding of Intel Corporation in 1968 with Robert Noyce and Gordon Moore" class="card-img" />
       <p>
         Robert Noyce and Gordon Moore rename the newly formed company 
         NM Electronics to Intel Corporation, laying the foundation for 
@@ -46,7 +77,7 @@
     <div class="timeline-card">
       <h2>1971</h2>
       <h3>First Microprocessor</h3>
-      <img src="img/2.jpg" alt="First Microprocessor 1971" class="card-img" />
+      <img src="img/2.jpg" alt="The Intel 4004 microprocessor, world's first commercial microprocessor released in 1971" class="card-img" />
       <p>
         Intel debuts the 4004, the world's first commercial microprocessor, 
         igniting the microprocessor revolution and propelling the future 
@@ -58,7 +89,7 @@
     <div class="timeline-card">
       <h2>1978</h2>
       <h3>8086 Processor</h3>
-      <img src="img/3.jpg" alt="8086 Processor 1978" class="card-img" />
+      <img src="img/3.jpg" alt="The Intel 8086 processor that established the x86 architecture in 1978" class="card-img" />
       <p>
         Launch of the 8086 processor, establishing the x86 architecture 
         that drives countless PCs and servers in the modern era.
@@ -69,7 +100,7 @@
     <div class="timeline-card">
       <h2>1985</h2>
       <h3>386 Processor</h3>
-      <img src="img/4.jpg" alt="386 Processor 1985" class="card-img" />
+      <img src="img/4.jpg" alt="The Intel 386 processor with 32-bit architecture introduced in 1985" class="card-img" />
       <p>
         Intel introduces the 386 processor with 32-bit architecture, 
         ushering in a new era of performance and multitasking for 
@@ -81,7 +112,7 @@
     <div class="timeline-card">
       <h2>2006</h2>
       <h3>Peak GHG Emissions</h3>
-      <img src="img/5.jpg" alt="Peak GHG Emissions 2006" class="card-img" />
+      <img src="img/5.jpg" alt="Graph showing Intel's peak greenhouse gas emissions in 2006 before reduction efforts" class="card-img" />
       <p>
         This year marks Intel's highest annual greenhouse gas emissions 
         for operations. Over subsequent years, Intel invests heavily in 
@@ -94,7 +125,7 @@
     <div class="timeline-card">
       <h2>2020</h2>
       <h3>RISE Strategy</h3>
-      <img src="img/6.jpg" alt="RISE Strategy 2020" class="card-img" />
+      <img src="img/6.jpg" alt="Intel RISE strategy announcement: Responsible, Inclusive, Sustainable, Enabling goals for 2030" class="card-img" />
       <p>
         Intel launches its RISE (Responsible, Inclusive, Sustainable, 
         Enabling) strategy and 2030 goals, aiming to drive industry-wide 
@@ -106,7 +137,7 @@
     <div class="timeline-card">
       <h2>2022</h2>
       <h3>Net-Zero By 2040</h3>
-      <img src="img/7.jpg" alt="Net-Zero By 2040" class="card-img" />
+      <img src="img/7.jpg" alt="Intel's commitment to achieve net-zero greenhouse gas emissions by 2040 announcement" class="card-img" />
       <p>
         Intel announces its commitment to achieve net-zero greenhouse 
         gas emissions (Scope 1 and 2) across its global operations 
@@ -118,7 +149,7 @@
     <div class="timeline-card">
       <h2>2023</h2>
       <h3>Renewable Electricity</h3>
-      <img src="img/8.jpg" alt="Renewable Electricity 2023" class="card-img" />
+      <img src="img/8.jpg" alt="Intel achieves 99% renewable electricity usage worldwide in 2023, featuring solar panels and wind turbines" class="card-img" />
       <p>
         The company achieves 99% renewable electricity usage worldwide, 
         helping to drastically lower carbon emissions and driving progress 
@@ -130,7 +161,7 @@
     <div class="timeline-card">
       <h2>2024</h2>
       <h3>Sustainability Summit</h3>
-      <img src="img/9.jpg" alt="Sustainability Summit 2024" class="card-img" />
+      <img src="img/9.jpg" alt="Intel's first Sustainability Summit in 2024 bringing together industry leaders and government officials" class="card-img" />
       <p>
         Intel hosts its first Sustainability Summit, uniting suppliers, 
         government officials, and industry leaders to collaborate on 
@@ -139,5 +170,515 @@
     </div>
   </section>
   <p>Scroll to view timeline | Hover over cards to learn more!</p>
+
+  <!-- Three-Column Section with Bootstrap Grid -->
+  <section class="three-column-section py-5" aria-label="Key Focus Areas">
+    <!-- Container: centers content and adds padding on sides -->
+    <div class="container">
+      
+      <!-- Row: creates a horizontal group of columns -->
+      <div class="row g-4">
+        
+        <!-- Column 1: col-12 = full width on mobile, col-md-4 = 1/3 width on tablets and up -->
+        <div class="col-12 col-md-4">
+          <div class="column-card text-center p-4">
+            <!-- Bootstrap Icon: enhances the heading visually -->
+            <i class="bi bi-lightning-charge-fill column-icon" aria-hidden="true"></i>
+            <h3 class="column-heading">Innovation</h3>
+            <p class="column-text">
+              Discover how Intel continues to push the boundaries of technology 
+              with groundbreaking processors and cutting-edge solutions that power 
+              the future of computing.
+            </p>
+            <!-- Styled "Learn More" link -->
+            <a href="#" class="learn-more-link" aria-label="Learn more about Intel's innovation initiatives" data-bs-toggle="modal" data-bs-target="#innovationModal">Learn More <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </div>
+
+        <!-- Column 2 -->
+        <div class="col-12 col-md-4">
+          <div class="column-card text-center p-4">
+            <!-- Bootstrap Icon: leaf represents sustainability -->
+            <i class="bi bi-tree-fill column-icon" aria-hidden="true"></i>
+            <h3 class="column-heading">Sustainability</h3>
+            <p class="column-text">
+              Learn about Intel's commitment to environmental responsibility, from 
+              renewable energy initiatives to achieving net-zero emissions and 
+              reducing our carbon footprint.
+            </p>
+            <!-- Styled "Learn More" link -->
+            <a href="#" class="learn-more-link" aria-label="Learn more about Intel's sustainability commitment" data-bs-toggle="modal" data-bs-target="#sustainabilityModal">Learn More <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </div>
+
+        <!-- Column 3 -->
+        <div class="col-12 col-md-4">
+          <div class="column-card text-center p-4">
+            <!-- Bootstrap Icon: globe represents global impact -->
+            <i class="bi bi-globe-americas column-icon" aria-hidden="true"></i>
+            <h3 class="column-heading">Global Impact</h3>
+            <p class="column-text">
+              Explore Intel's worldwide influence on technology accessibility, 
+              education programs, and community partnerships that drive positive 
+              change across the globe.
+            </p>
+            <!-- Styled "Learn More" link -->
+            <a href="#" class="learn-more-link" aria-label="Learn more about Intel's global impact programs" data-bs-toggle="modal" data-bs-target="#globalImpactModal">Learn More <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Accordion Section: Sustainability FAQs -->
+  <section class="accordion-section py-5" aria-label="Sustainability FAQs">
+    <div class="container">
+      <h2 class="text-center mb-4 section-title">Frequently Asked Questions</h2>
+      <p class="text-center mb-5 section-subtitle">Learn more about Intel's sustainability journey and commitments</p>
+      
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-10">
+          <!-- Bootstrap Accordion -->
+          <div class="accordion" id="sustainabilityAccordion">
+            
+            <!-- Accordion Item 1 -->
+            <div class="accordion-item">
+              <h3 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  <i class="bi bi-question-circle-fill me-2" aria-hidden="true"></i>
+                  What is Intel's net-zero commitment?
+                </button>
+              </h3>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#sustainabilityAccordion">
+                <div class="accordion-body">
+                  <p>Intel has committed to achieving net-zero greenhouse gas emissions across our global operations (Scope 1 and 2) by 2040. This ambitious goal builds on decades of environmental leadership and includes:</p>
+                  <ul>
+                    <li>100% renewable electricity usage worldwide</li>
+                    <li>Investment in energy efficiency and conservation</li>
+                    <li>Chemical abatement technology to reduce emissions</li>
+                    <li>Collaboration with suppliers and partners for Scope 3 reductions</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Accordion Item 2 -->
+            <div class="accordion-item">
+              <h3 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  <i class="bi bi-question-circle-fill me-2" aria-hidden="true"></i>
+                  How does Intel use renewable energy?
+                </button>
+              </h3>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#sustainabilityAccordion">
+                <div class="accordion-body">
+                  <p>Intel achieved 99% renewable electricity usage worldwide in 2023 through:</p>
+                  <ul>
+                    <li><strong>On-site solar installations:</strong> Solar panels at multiple facilities</li>
+                    <li><strong>Power Purchase Agreements (PPAs):</strong> Long-term contracts for wind and solar energy</li>
+                    <li><strong>Renewable Energy Credits (RECs):</strong> Supporting renewable energy development</li>
+                    <li><strong>Green tariffs:</strong> Working with utility providers for renewable options</li>
+                  </ul>
+                  <p>This approach has helped reduce our carbon footprint by millions of metric tons annually.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Accordion Item 3 -->
+            <div class="accordion-item">
+              <h3 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  <i class="bi bi-question-circle-fill me-2" aria-hidden="true"></i>
+                  What was the RISE strategy launched in 2020?
+                </button>
+              </h3>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#sustainabilityAccordion">
+                <div class="accordion-body">
+                  <p>RISE stands for <strong>Responsible, Inclusive, Sustainable, and Enabling</strong>. It's Intel's comprehensive corporate responsibility strategy with ambitious 2030 goals:</p>
+                  <ul>
+                    <li><strong>Responsible:</strong> Ethical business practices and supply chain responsibility</li>
+                    <li><strong>Inclusive:</strong> Diversity, equity, and inclusion in our workforce and communities</li>
+                    <li><strong>Sustainable:</strong> Environmental leadership in climate, water, and waste</li>
+                    <li><strong>Enabling:</strong> Using technology to drive positive change globally</li>
+                  </ul>
+                  <p>The RISE strategy guides our decision-making and ensures we create value for all stakeholders.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Accordion Item 4 -->
+            <div class="accordion-item">
+              <h3 class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                  <i class="bi bi-question-circle-fill me-2" aria-hidden="true"></i>
+                  How can I stay updated on Intel's sustainability efforts?
+                </button>
+              </h3>
+              <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#sustainabilityAccordion">
+                <div class="accordion-body">
+                  <p>There are several ways to stay informed about Intel's sustainability initiatives:</p>
+                  <ul>
+                    <li>Subscribe to our sustainability newsletter (form below)</li>
+                    <li>Visit Intel's Corporate Responsibility website</li>
+                    <li>Read our annual Corporate Responsibility Report</li>
+                    <li>Follow Intel on social media for updates and announcements</li>
+                    <li>Attend Intel's Sustainability Summit and webinars</li>
+                  </ul>
+                  <p>We're committed to transparency and regularly share our progress, challenges, and goals with the public.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Subscription Form Section -->
+  <section class="newsletter-section py-5" aria-label="Newsletter Subscription">
+    <!-- Container: centers content and adds responsive padding -->
+    <div class="container">
+      <div class="row justify-content-center">
+        <!-- Column: centered content, responsive width -->
+        <div class="col-12 col-md-8 col-lg-6">
+          
+          <!-- Form card with Intel branding -->
+          <div class="newsletter-card text-center p-5">
+            
+            <!-- Icon for newsletter -->
+            <i class="bi bi-envelope-heart-fill newsletter-icon" aria-hidden="true"></i>
+            
+            <!-- Form heading -->
+            <h2 class="newsletter-heading mb-3">Stay Updated on Sustainability</h2>
+            
+            <!-- Form description -->
+            <p class="newsletter-description mb-4">
+              Subscribe to Intel's sustainability newsletter and receive the latest 
+              updates on our environmental initiatives, innovations, and global impact.
+            </p>
+
+            <!-- Bootstrap Form -->
+            <form class="newsletter-form" aria-labelledby="newsletter-heading" novalidate>
+              
+              <!-- Name input field -->
+              <div class="mb-3">
+                <label for="subscriberName" class="form-label">Your Name</label>
+                <input 
+                  type="text" 
+                  class="form-control form-control-lg" 
+                  id="subscriberName" 
+                  name="subscriberName"
+                  placeholder="Enter your full name" 
+                  aria-required="true"
+                  required
+                >
+              </div>
+
+              <!-- Email input field -->
+              <div class="mb-3">
+                <label for="subscriberEmail" class="form-label">Email Address</label>
+                <input 
+                  type="email" 
+                  class="form-control form-control-lg" 
+                  id="subscriberEmail" 
+                  name="subscriberEmail"
+                  placeholder="Enter your email address" 
+                  aria-required="true"
+                  aria-describedby="emailHelp"
+                  required
+                >
+                <!-- Helper text -->
+                <div id="emailHelp" class="form-text">We respect your privacy and will never share your email.</div>
+              </div>
+
+              <!-- Checkbox for agreement -->
+              <div class="mb-4 form-check">
+                <input 
+                  class="form-check-input" 
+                  type="checkbox" 
+                  id="agreeTerms" 
+                  name="agreeTerms"
+                  aria-required="true"
+                  required
+                >
+                <label class="form-check-label" for="agreeTerms">
+                  I agree to receive updates from Intel about sustainability initiatives.
+                </label>
+              </div>
+
+              <!-- Submit button -->
+              <button type="submit" class="btn btn-primary btn-lg subscribe-btn" aria-label="Subscribe to Intel sustainability newsletter">
+                <i class="bi bi-envelope-check" aria-hidden="true"></i> Subscribe Now
+              </button>
+              
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer class="footer py-4" role="contentinfo">
+    <!-- Container: centers content and adds responsive padding -->
+    <div class="container">
+      
+      <!-- Row: creates layout for footer content -->
+      <div class="row">
+        
+        <!-- Column 1: Footer navigation links -->
+        <div class="col-12 col-md-6 mb-3 mb-md-0">
+          <nav class="footer-nav" aria-label="Footer navigation">
+            <ul class="footer-links">
+              <li><a href="#" class="footer-link">Privacy Policy</a></li>
+              <li><a href="#" class="footer-link">Terms of Use</a></li>
+              <li><a href="#" class="footer-link">Contact</a></li>
+              <li><a href="#" class="footer-link">About Intel</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- Column 2: Copyright notice -->
+        <div class="col-12 col-md-6 text-md-end">
+          <p class="footer-copyright mb-0">
+            &copy; 2026 Intel Corporation. All rights reserved.
+          </p>
+          <p class="footer-tagline mb-0">
+            Intel, the Intel logo, and other Intel marks are trademarks of Intel Corporation.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal 1: Innovation -->
+  <div class="modal fade" id="innovationModal" tabindex="-1" aria-labelledby="innovationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="innovationModalLabel">
+            <i class="bi bi-lightning-charge-fill text-primary me-2" aria-hidden="true"></i>
+            Innovation at Intel
+          </h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="lead">Intel has been at the forefront of technological innovation for over five decades.</p>
+          
+          <h3 class="h5 mt-4 mb-3">Key Innovation Areas:</h3>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="innovation-item p-3">
+                <h4 class="h6"><i class="bi bi-cpu me-2" aria-hidden="true"></i>Advanced Processors</h4>
+                <p class="mb-0">Leading-edge CPU and GPU technology powering everything from personal computers to data centers.</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="innovation-item p-3">
+                <h4 class="h6"><i class="bi bi-robot me-2" aria-hidden="true"></i>Artificial Intelligence</h4>
+                <p class="mb-0">AI-optimized hardware and software solutions for machine learning and deep learning applications.</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="innovation-item p-3">
+                <h4 class="h6"><i class="bi bi-cloud me-2" aria-hidden="true"></i>Cloud Computing</h4>
+                <p class="mb-0">Infrastructure technology enabling efficient, scalable cloud services worldwide.</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="innovation-item p-3">
+                <h4 class="h6"><i class="bi bi-shield-check me-2" aria-hidden="true"></i>Security</h4>
+                <p class="mb-0">Built-in hardware security features protecting data and systems from evolving threats.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="alert alert-info mt-4" role="alert">
+            <i class="bi bi-info-circle-fill me-2" aria-hidden="true"></i>
+            <strong>Did you know?</strong> Intel invests over $15 billion annually in research and development to drive the next generation of computing innovations.
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <a href="#" class="btn btn-primary">Visit Innovation Hub</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2: Sustainability -->
+  <div class="modal fade" id="sustainabilityModal" tabindex="-1" aria-labelledby="sustainabilityModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="sustainabilityModalLabel">
+            <i class="bi bi-tree-fill text-success me-2" aria-hidden="true"></i>
+            Sustainability Commitment
+          </h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="lead">Intel is committed to reducing our environmental footprint and creating a more sustainable future.</p>
+          
+          <h3 class="h5 mt-4 mb-3">Our Environmental Goals:</h3>
+          <ul class="list-group list-group-flush mb-4">
+            <li class="list-group-item">
+              <i class="bi bi-check-circle-fill text-success me-2" aria-hidden="true"></i>
+              <strong>Net-Zero Emissions by 2040</strong> - Across global operations (Scope 1 & 2)
+            </li>
+            <li class="list-group-item">
+              <i class="bi bi-check-circle-fill text-success me-2" aria-hidden="true"></i>
+              <strong>100% Renewable Energy</strong> - Achieved 99% renewable electricity in 2023
+            </li>
+            <li class="list-group-item">
+              <i class="bi bi-check-circle-fill text-success me-2" aria-hidden="true"></i>
+              <strong>Water Restoration</strong> - Return 100% of water used to local watersheds
+            </li>
+            <li class="list-group-item">
+              <i class="bi bi-check-circle-fill text-success me-2" aria-hidden="true"></i>
+              <strong>Zero Waste to Landfill</strong> - 90% waste diversion rate at manufacturing sites
+            </li>
+          </ul>
+          
+          <div class="progress-section mb-4">
+            <h4 class="h6 mb-3">Progress Towards Net-Zero</h4>
+            <div class="progress" style="height: 30px;" role="progressbar" aria-label="Progress towards net-zero emissions" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+              <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" style="width: 65%">
+                65% Complete
+              </div>
+            </div>
+            <small class="text-muted mt-2 d-block">Based on emissions reduction from 2006 peak levels</small>
+          </div>
+          
+          <div class="alert alert-success" role="alert">
+            <i class="bi bi-award-fill me-2" aria-hidden="true"></i>
+            Intel has been recognized as a leader in corporate sustainability by CDP, Dow Jones Sustainability Index, and more.
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <a href="#" class="btn btn-success">Read Full Report</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3: Global Impact -->
+  <div class="modal fade" id="globalImpactModal" tabindex="-1" aria-labelledby="globalImpactModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="globalImpactModalLabel">
+            <i class="bi bi-globe-americas text-info me-2" aria-hidden="true"></i>
+            Global Impact Programs
+          </h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="lead">Intel's technology and programs are making a positive difference in communities worldwide.</p>
+          
+          <h3 class="h5 mt-4 mb-3">Our Global Initiatives:</h3>
+          
+          <div class="accordion accordion-flush" id="globalImpactAccordion">
+            <div class="accordion-item">
+              <h4 class="accordion-header" id="educationHeading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#educationCollapse" aria-expanded="false" aria-controls="educationCollapse">
+                  <i class="bi bi-mortarboard-fill me-2" aria-hidden="true"></i>
+                  Education & Skills Development
+                </button>
+              </h4>
+              <div id="educationCollapse" class="accordion-collapse collapse" aria-labelledby="educationHeading" data-bs-parent="#globalImpactAccordion">
+                <div class="accordion-body">
+                  Teaching 10 million people in 30 countries with AI skills by 2030, preparing the workforce for the future of technology.
+                </div>
+              </div>
+            </div>
+            
+            <div class="accordion-item">
+              <h4 class="accordion-header" id="accessibilityHeading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#accessibilityCollapse" aria-expanded="false" aria-controls="accessibilityCollapse">
+                  <i class="bi bi-universal-access-circle me-2" aria-hidden="true"></i>
+                  Technology Accessibility
+                </button>
+              </h4>
+              <div id="accessibilityCollapse" class="accordion-collapse collapse" aria-labelledby="accessibilityHeading" data-bs-parent="#globalImpactAccordion">
+                <div class="accordion-body">
+                  Developing inclusive technology solutions that empower people with disabilities, including AI-powered assistive technologies.
+                </div>
+              </div>
+            </div>
+            
+            <div class="accordion-item">
+              <h4 class="accordion-header" id="communityHeading">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#communityCollapse" aria-expanded="false" aria-controls="communityCollapse">
+                  <i class="bi bi-heart-fill me-2" aria-hidden="true"></i>
+                  Community Engagement
+                </button>
+              </h4>
+              <div id="communityCollapse" class="accordion-collapse collapse" aria-labelledby="communityHeading" data-bs-parent="#globalImpactAccordion">
+                <div class="accordion-body">
+                  Intel employees volunteered over 500,000 hours in 2023, supporting local communities through STEM education, environmental projects, and social impact initiatives.
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="statistics mt-4 p-3 bg-light rounded">
+            <h4 class="h6 mb-3">Impact by Numbers</h4>
+            <div class="row text-center">
+              <div class="col-4">
+                <div class="stat-number h3 text-primary mb-1">10M+</div>
+                <div class="stat-label small">People Trained</div>
+              </div>
+              <div class="col-4">
+                <div class="stat-number h3 text-primary mb-1">30+</div>
+                <div class="stat-label small">Countries Reached</div>
+              </div>
+              <div class="col-4">
+                <div class="stat-number h3 text-primary mb-1">500K+</div>
+                <div class="stat-label small">Volunteer Hours</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <a href="#" class="btn btn-info text-white">Explore Programs</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Bootstrap 5 JavaScript Bundle (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- Simple Language Switcher Script -->
+  <script>
+    // Simple, lightweight language switcher
+    (function() {
+      const languageSelect = document.getElementById('languageSelect');
+      
+      if (languageSelect) {
+        languageSelect.addEventListener('change', function(e) {
+          const selectedLang = e.target.value;
+          
+          // RTL languages
+          const rtlLanguages = ['ar', 'he', 'fa', 'ur'];
+          const isRTL = rtlLanguages.includes(selectedLang);
+          
+          // Update direction
+          document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
+          document.documentElement.lang = selectedLang;
+          
+          console.log('Language changed to: ' + selectedLang + ' | Direction: ' + (isRTL ? 'RTL' : 'LTR'));
+        });
+      }
+    })();
+  </script>
 </body>
 </html>

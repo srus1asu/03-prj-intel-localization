@@ -15,6 +15,166 @@ body {
   background-color: #f5f5f5;
   color: #333;
   overflow-x: hidden; /* Prevent horizontal scrolling on body */
+  /* Smooth transitions when switching between LTR and RTL */
+  transition: direction 0.3s ease;
+}
+
+/* ==========================================
+   ACCESSIBILITY: SKIP LINK
+   ========================================== */
+
+/* Skip to main content link - hidden until focused */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #0071c5;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-weight: bold;
+  z-index: 100;
+  border-radius: 0 0 4px 0;
+}
+
+/* Show skip link on keyboard focus */
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid #ffcc00;
+  outline-offset: 2px;
+}
+
+/* ==========================================
+   ACCESSIBILITY: FOCUS STATES
+   ========================================== */
+
+/* Enhanced focus styles for keyboard navigation */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 3px solid #0071c5;
+  outline-offset: 2px;
+}
+
+/* Card focus state */
+.timeline-card:focus-within {
+  outline: 3px solid #0071c5;
+  outline-offset: 4px;
+}
+
+/* ==========================================
+   LANGUAGE SWITCHER
+   ========================================== */
+
+/* Language switcher container */
+.language-switcher {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 12px 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+}
+
+/* RTL: Move switcher to left side */
+[dir="rtl"] .language-switcher {
+  right: auto;
+  left: 20px;
+}
+
+/* Language switcher hover effect */
+.language-switcher:hover {
+  box-shadow: 0 6px 16px rgba(0, 113, 197, 0.25);
+}
+
+/* Language label styling */
+.language-label {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0071c5;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+}
+
+/* Language label icon */
+.language-label i {
+  font-size: 1.1rem;
+}
+
+/* Language select dropdown */
+.language-switcher select {
+  min-width: 180px;
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+/* Select focus state */
+.language-switcher select:focus {
+  border-color: #0071c5;
+  box-shadow: 0 0 0 0.2rem rgba(0, 113, 197, 0.25);
+  outline: none;
+}
+
+/* Responsive: Mobile adjustment */
+@media (max-width: 768px) {
+  .language-switcher {
+    top: 10px;
+    right: 10px;
+    padding: 8px 12px;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  [dir="rtl"] .language-switcher {
+    right: auto;
+    left: 10px;
+  }
+  
+  .language-switcher select {
+    min-width: 150px;
+    font-size: 0.85rem;
+  }
+  
+  .language-label {
+    font-size: 0.85rem;
+  }
+}
+
+
+/* ==========================================
+   RTL (RIGHT-TO-LEFT) SUPPORT
+   ========================================== */
+
+/* RTL-specific adjustments for right-to-left languages */
+[dir="rtl"] body {
+  text-align: right;
+  direction: rtl;
+}
+
+/* Ensure flex layouts respect RTL direction */
+[dir="rtl"] section {
+  direction: rtl;
+}
+
+/* RTL: Adjust gradient direction for header */
+[dir="rtl"] header::before {
+  transform: scaleX(-1); /* Mirror the pattern */
 }
 
 /* ==========================================
@@ -190,6 +350,538 @@ section > div:hover p {
   max-height: 200px; /* Reveal text */
   opacity: 1;
   margin-top: 10px;
+}
+
+/* ==========================================
+   RTL-SPECIFIC CARD ADJUSTMENTS
+   ========================================== */
+
+/* RTL: Ensure cards flow from right to left */
+[dir="rtl"] section > div {
+  text-align: right;
+}
+
+/* RTL: Adjust gradient direction for card accent bar */
+[dir="rtl"] section > div::before {
+  background: linear-gradient(270deg, #0071c5, #00c7fd);
+}
+
+/* ==========================================
+   THREE-COLUMN SECTION WITH BOOTSTRAP
+   ========================================== */
+
+/* Container for the three-column section */
+.three-column-section {
+  background-color: #ffffff;
+  padding: 60px 0;
+}
+
+/* Individual column card styling */
+.column-card {
+  background: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  height: 100%; /* Equal height columns */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Hover effect for column cards */
+.column-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 113, 197, 0.2);
+}
+
+/* Icon styling for column headings */
+.column-icon {
+  font-size: 3rem; /* Large icon size */
+  color: #0071c5; /* Intel blue */
+  margin-bottom: 20px;
+  display: block;
+}
+
+/* Column heading text */
+.column-heading {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Column paragraph text */
+.column-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 20px;
+  flex-grow: 1; /* Push link to bottom */
+}
+
+/* "Learn More" link styling */
+.learn-more-link {
+  display: inline-block;
+  color: #0071c5;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+/* Hover effect for "Learn More" links */
+.learn-more-link:hover {
+  color: #ffffff;
+  background-color: #0071c5;
+  transform: translateX(5px);
+}
+
+/* Arrow icon in "Learn More" link moves on hover */
+.learn-more-link:hover i {
+  transform: translateX(3px);
+  display: inline-block;
+}
+
+/* RTL: Reverse arrow direction for Learn More links */
+[dir="rtl"] .learn-more-link:hover {
+  transform: translateX(-5px);
+}
+
+[dir="rtl"] .learn-more-link:hover i {
+  transform: translateX(-3px);
+}
+
+/* ==========================================
+   NEWSLETTER SUBSCRIPTION FORM
+   ========================================== */
+
+/* Newsletter section background */
+.newsletter-section {
+  background: linear-gradient(135deg, #0071c5 0%, #0054a6 100%);
+  color: white;
+}
+
+/* Newsletter card container */
+.newsletter-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  color: #333;
+}
+
+/* Newsletter icon */
+.newsletter-icon {
+  font-size: 3.5rem;
+  color: #0071c5;
+  margin-bottom: 20px;
+}
+
+/* Newsletter heading */
+.newsletter-heading {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #0071c5;
+}
+
+/* Newsletter description text */
+.newsletter-description {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Form input fields styling */
+.newsletter-form .form-control {
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 12px 20px;
+  transition: all 0.3s ease;
+}
+
+/* Input focus effect */
+.newsletter-form .form-control:focus {
+  border-color: #0071c5;
+  box-shadow: 0 0 0 0.2rem rgba(0, 113, 197, 0.25);
+}
+
+/* Form helper text */
+.newsletter-form .form-text {
+  color: #555; /* Improved contrast from #888 */
+  font-size: 0.875rem;
+  text-align: center;
+  margin-top: 8px;
+}
+
+/* Form labels - visible for accessibility */
+.newsletter-form .form-label {
+  display: block;
+  text-align: left;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+/* RTL: Align labels to the right */
+[dir="rtl"] .newsletter-form .form-label {
+  text-align: right;
+}
+
+/* Checkbox styling */
+.newsletter-form .form-check {
+  text-align: left;
+}
+
+/* RTL: Align checkbox text to the right */
+[dir="rtl"] .newsletter-form .form-check {
+  text-align: right;
+}
+
+.newsletter-form .form-check-input {
+  width: 1.2rem;
+  height: 1.2rem;
+  cursor: pointer;
+}
+
+.newsletter-form .form-check-input:checked {
+  background-color: #0071c5;
+  border-color: #0071c5;
+}
+
+.newsletter-form .form-check-label {
+  color: #333; /* Improved contrast from #555 */
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+/* Subscribe button styling */
+.subscribe-btn {
+  background: linear-gradient(135deg, #0071c5 0%, #0054a6 100%);
+  border: none;
+  padding: 12px 40px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Subscribe button hover effect */
+.subscribe-btn:hover {
+  background: linear-gradient(135deg, #0054a6 0%, #003d7a 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 113, 197, 0.4);
+}
+
+/* Subscribe button icon spacing */
+.subscribe-btn i {
+  margin-right: 8px;
+}
+
+/* RTL: Adjust icon spacing */
+[dir="rtl"] .subscribe-btn i {
+  margin-right: 0;
+  margin-left: 8px;
+}
+
+/* ==========================================
+   ACCORDION SECTION (FAQs)
+   ========================================== */
+
+/* Accordion section background */
+.accordion-section {
+  background-color: #f8f9fa;
+}
+
+/* Section title styling */
+.section-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #0071c5;
+  margin-bottom: 15px;
+}
+
+/* Section subtitle */
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Accordion item styling */
+.accordion-item {
+  border: 1px solid #e0e0e0;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.accordion-item:hover {
+  box-shadow: 0 4px 8px rgba(0, 113, 197, 0.15);
+}
+
+/* Accordion button (header) */
+.accordion-button {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  background-color: white;
+  padding: 18px 24px;
+  transition: all 0.3s ease;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #0071c5;
+  color: white;
+  box-shadow: none;
+}
+
+.accordion-button:focus {
+  border-color: #0071c5;
+  box-shadow: 0 0 0 0.25rem rgba(0, 113, 197, 0.25);
+}
+
+.accordion-button::after {
+  filter: brightness(0) saturate(100%);
+}
+
+.accordion-button:not(.collapsed)::after {
+  filter: brightness(0) invert(1);
+}
+
+/* Accordion body content */
+.accordion-body {
+  padding: 24px;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #555;
+  background-color: #ffffff;
+}
+
+.accordion-body ul {
+  margin: 15px 0;
+  padding-left: 24px;
+}
+
+.accordion-body li {
+  margin-bottom: 10px;
+}
+
+.accordion-body strong {
+  color: #0071c5;
+}
+
+/* RTL: Adjust accordion icon spacing */
+[dir="rtl"] .accordion-button i {
+  margin-right: 0;
+  margin-left: 8px;
+}
+
+/* ==========================================
+   MODAL ENHANCEMENTS
+   ========================================== */
+
+/* Modal header styling */
+.modal-header {
+  background: linear-gradient(135deg, #0071c5 0%, #0054a6 100%);
+  color: white;
+  border-bottom: none;
+  padding: 20px 24px;
+}
+
+.modal-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.modal-header .btn-close {
+  filter: brightness(0) invert(1);
+}
+
+/* Modal body */
+.modal-body {
+  padding: 24px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.modal-body .lead {
+  font-size: 1.15rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Innovation items in modal */
+.innovation-item {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #0071c5;
+  transition: all 0.3s ease;
+}
+
+.innovation-item:hover {
+  background-color: #e9ecef;
+  transform: translateX(5px);
+}
+
+.innovation-item h4 {
+  color: #0071c5;
+  margin-bottom: 8px;
+}
+
+.innovation-item p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* RTL: Adjust innovation item border and transform */
+[dir="rtl"] .innovation-item {
+  border-left: none;
+  border-right: 4px solid #0071c5;
+}
+
+[dir="rtl"] .innovation-item:hover {
+  transform: translateX(-5px);
+}
+
+/* Modal footer */
+.modal-footer {
+  border-top: 1px solid #e9ecef;
+  padding: 16px 24px;
+}
+
+/* Progress section in modal */
+.progress-section .progress {
+  border-radius: 15px;
+  background-color: #e9ecef;
+}
+
+.progress-bar {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Statistics display in modal */
+.statistics {
+  border: 2px solid #0071c5;
+}
+
+.stat-number {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  color: #666;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* List group in modal */
+.list-group-item {
+  border: none;
+  padding: 12px 0;
+}
+
+/* Alert in modal */
+.modal-body .alert {
+  border-radius: 8px;
+}
+
+/* Responsive modal adjustments */
+@media (max-width: 768px) {
+  .modal-dialog {
+    margin: 10px;
+  }
+  
+  .modal-title {
+    font-size: 1.2rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .accordion-button {
+    font-size: 1rem;
+    padding: 14px 16px;
+  }
+}
+
+/* ==========================================
+   FOOTER SECTION
+   ========================================== */
+
+/* Footer background and styling */
+.footer {
+  background-color: #333;
+  color: #ffffff;
+  border-top: 4px solid #0071c5; /* Intel blue accent */
+}
+
+/* Footer navigation links container */
+.footer-nav {
+  display: flex;
+  align-items: center;
+}
+
+/* Footer links list */
+.footer-links {
+  list-style: none; /* Remove bullet points */
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap; /* Wrap links on small screens */
+  gap: 20px;
+}
+
+/* Individual footer link styling */
+.footer-link {
+  color: #cccccc;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease;
+}
+
+/* Footer link hover effect */
+.footer-link:hover {
+  color: #00a8e8; /* Lighter blue for better contrast on dark background */
+  text-decoration: underline;
+}
+
+/* Improved focus state for footer links */
+.footer-link:focus {
+  outline: 3px solid #00a8e8;
+  outline-offset: 2px;
+}
+
+/* Copyright text styling */
+.footer-copyright {
+  font-size: 0.9rem;
+  color: #cccccc;
+}
+
+/* Footer tagline text */
+.footer-tagline {
+  font-size: 0.8rem;
+  color: #999;
+  margin-top: 5px;
+}
+
+/* RTL: Align footer text to the right */
+[dir="rtl"] .footer-nav {
+  justify-content: flex-end;
+}
+
+[dir="rtl"] .footer-links {
+  flex-direction: row-reverse;
 }
 
 /* ==========================================
